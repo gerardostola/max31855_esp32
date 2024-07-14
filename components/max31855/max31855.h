@@ -31,8 +31,8 @@
 #define SPI_BUS HSPI_HOST
 #endif
 
-#define DEBUG_4BYTE_TO_BINARY_PATTERN "(0x%08x) %c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c"
-#define DEBUG_2BYTE_TO_BINARY_PATTERN "(0x%04x) %c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c"
+#define DEBUG_4BYTE_TO_BINARY_PATTERN "(0x%08lx) %c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c"
+#define DEBUG_2BYTE_TO_BINARY_PATTERN "(0x%04lx) %c%c%c%c%c%c%c%c %c%c%c%c%c%c%c%c"
 #define DEBUG_BYTE4_TO_BINARY(byte) \
   (byte & 0x80000000 ? '1' : '0'), \
   (byte & 0x40000000 ? '1' : '0'), \

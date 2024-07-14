@@ -56,7 +56,7 @@ max31855_cfg_t max31855_init()
   // manually set the CS line
   gpio_config_t io_conf;
   io_conf.pull_down_en = 0;
-  io_conf.intr_type = GPIO_PIN_INTR_DISABLE;
+  io_conf.intr_type = GPIO_INTR_DISABLE;
   io_conf.pin_bit_mask = (1ULL << PIN_NUM_CS);
   io_conf.mode = GPIO_MODE_OUTPUT;
   io_conf.pull_up_en = 0;
@@ -215,7 +215,7 @@ uint8_t max31855_get_temperature(max31855_cfg_t *max31855)
   uint32_t sign = MAX31855_EXTRACT_VALUE_WITH_BITMASK(rawData, MAX31855_BITMASK_TC_DATA_SIGN);
 #if defined DEBUG
    printf(" TC_TEMP "DEBUG_2BYTE_TO_BINARY_PATTERN, value, DEBUG_BYTE2_TO_BINARY(value), DEBUG_BYTE1_TO_BINARY(value));
-   printf(" TC_SIGN 0x%02x",sign);
+   printf(" TC_SIGN 0x%02lx",sign);
 #endif
   float tc_temperature = (float)(MAX31855_THERMOCOUPLE_RESOLUTION * (int16_t)(MAX31855_EXTEND_SIGN(sign, value, 13)));
 
@@ -224,7 +224,7 @@ uint8_t max31855_get_temperature(max31855_cfg_t *max31855)
   sign = MAX31855_EXTRACT_VALUE_WITH_BITMASK(rawData, MAX31855_BITMASK_CJ_DATA_SIGN);
 #if defined DEBUG
    printf(" CJ_TEMP "DEBUG_2BYTE_TO_BINARY_PATTERN, value, DEBUG_BYTE2_TO_BINARY(value), DEBUG_BYTE1_TO_BINARY(value));
-   printf(" CJ_SIGN 0x%02x",sign);
+   printf(" CJ_SIGN 0x%02lx",sign);
 #endif
   float cj_temperature = (float)(MAX31855_COLD_JUNCTION_RESOLUTION * (int16_t)(MAX31855_EXTEND_SIGN(sign, value, 11)));
 

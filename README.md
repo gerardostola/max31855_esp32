@@ -9,14 +9,14 @@ This is an ESP-IDF library for reading temperatures from (K-type) thermocoupler 
 
 Note:
 
-This project is compatible only with ESP-IDF v4.x and the CMake-based build system.
-Instructions here are given for the v4.x toolchain using `idf.py`.
+This project is compatible only with ESP-IDF v5.2.2 and the CMake-based build system.
+Instructions here are given for the v5.2.2 toolchain using `idf.py`.
 
 ### Build this repository standalone and run the example.
 
 Try this first to make sure your hardware is supported, wired and configured properly.
 
-1. Get this project: `git clone https://github.com/andreas-berg/max31855_esp32.git`
+1. Get this project: `git clone https://github.com/gerardostola/max31855_esp32.git`
 
 2. From its root run `idf.py menuconfig`
 
@@ -38,7 +38,7 @@ It is recommended to install this repo as a submodule in your IDF project's git 
 From your project root (you can get the esp32 idf project template [here](https://github.com/espressif/esp-idf-template)):
 
 1. `mkdir -p components`
-2. `git submodule add https://github.com/andreas-berg/max31855_esp32.git components/max31855_esp32`
+2. `git submodule add https://github.com/gerardostola/max31855_esp32.git components/max31855_esp32`
 3. `git submodule update --init --recursive`
 4. Edit your CMake to add this repo's components folder to the IDF components path.
 
